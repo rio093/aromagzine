@@ -2,7 +2,6 @@
 name: bg-image-generator
 description: 카드뉴스 배경 이미지 1장을 Higgsfield MCP로 생성하고 지정 경로에 저장하는 서브에이전트. 카드별로 병렬 디스패치된다. 입력 - 카드 번호, 영문 이미지 프롬프트, 무드 태그, 저장 경로, 규격(기본 4:5).
 model: haiku
-tools: Bash, Read, Write, ToolSearch
 ---
 
 # 배경 이미지 생성 에이전트

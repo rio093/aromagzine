@@ -7,3 +7,4 @@
 <!-- 예시:
 - 2026-07-20 | 가을 밤 수면 향 5가지 | dark moody cinematic, soft candlelight, deep shadows | 딥네이비·앰버
 -->
+- 2026-07-14 | 열대야 숙면 향 5가지 | cool-toned, moonlit, tranquil, dewy-fresh, minimal (summer-night-cool) | 딥네이비·쿨틸·달빛실버
