@@ -9,10 +9,13 @@ Higgsfield MCP(배경 이미지 생성)와 Figma MCP(레이아웃 조립)를 Cla
 주제 입력
    │
    ▼
-1. 카피 단계 ──── 카드 구성안 + 카피 + 무드 제안 (plan.md) → 사용자 승인
+1. 소재 단계 ──── copy-ideator(Opus): 리서치 + 구성안 + 무드 제안
    │
    ▼
-2. 이미지 단계 ── 카드별 서브에이전트 병렬 실행 → Higgsfield 배경 생성 (4:5)
+1-2. 문구 단계 ── text-designer(Sonnet): 카드 카피 + 캡션 → 사용자 승인
+   │
+   ▼
+2. 이미지 단계 ── bg-image-generator(Haiku) 병렬 → Higgsfield 배경 생성 (4:5)
    │
    ▼
 3. 조립 단계 ──── Figma 프레임 생성 + 배경 업로드 + 텍스트 배치 (Pretendard)
@@ -29,7 +32,9 @@ Higgsfield MCP(배경 이미지 생성)와 Figma MCP(레이아웃 조립)를 Cla
 ```
 CLAUDE.md                  ← 품질 게이트(§3)·포맷 규칙·트리거 프롬프트 (규칙의 단일 원본)
 skills/cardnews/SKILL.md   ← /cardnews 오케스트레이터 스킬
-agents/bg-image-generator.md ← 배경 이미지 병렬 생성 서브에이전트
+agents/copy-ideator.md       ← 소재·구성안 에이전트 (Opus)
+agents/text-designer.md      ← 문구·캡션 에이전트 (Sonnet)
+agents/bg-image-generator.md ← 배경 이미지 병렬 생성 에이전트 (Haiku)
 brand/style-presets.md     ← 세트별 무드 프리셋 축적
 docs/superpowers/specs/    ← 설계 문서
 output/                    ← 제작 산출물 (git 제외)
@@ -42,8 +47,17 @@ output/                    ← 제작 산출물 (git 제외)
 ```bash
 mkdir -p ~/.claude/skills/cardnews ~/.claude/agents
 cp skills/cardnews/SKILL.md ~/.claude/skills/cardnews/SKILL.md
-cp agents/bg-image-generator.md ~/.claude/agents/bg-image-generator.md
+cp agents/*.md ~/.claude/agents/
 ```
+
+## 모델 배정
+
+| 단계 | 담당 | 모델 |
+|---|---|---|
+| 소재 리서치·구성안 | copy-ideator | Opus 4.8 |
+| 카드 문구·캡션 | text-designer | Sonnet 5 |
+| 배경 이미지 생성 | bg-image-generator | Haiku 4.5 |
+| 오케스트레이션·조립·검수 | 메인 스레드 | 세션 모델 |
 
 ## 사전 요구
 
